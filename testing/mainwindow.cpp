@@ -158,6 +158,51 @@ void MainWindow::Start()
         }
         delete SmileArray;
     }
+    catch(int errorNumber)
+    {
+        QString errorString;
+        QString errNumBuf = "ups";
+        errNumBuf = errNumBuf.setNum(errorNumber);
+        switch(errorNumber)
+        {
+            case 1:
+            errorString = "Empty file input name";
+            break;
+            case 2:
+                errorString = "Check the file name and its existence";
+            break;
+            case 3:
+                errorString = "Empty input field";
+            break;
+            case 4:
+                errorString = "Empty file output name";
+            break;
+            case 5:
+                errorString = "Memory is not allocated";
+            break;
+            case 6:
+                errorString = "Output file was not open";
+            break;
+            case 7:
+                errorString = "Input data is not integer";
+            break;
+            case 8:
+                errorString = "Choose input way";
+            break;
+            case 9:
+                errorString = "Choose output way";
+            break;
+            case 10:
+                errorString = "Size of array = 0";
+            break;
+            default:
+                errorString = "Something not right";
+            break;
+        }
+
+        ui->lEStatus->setText("Error " + errNumBuf + " - " + errorString);
+    };
+}
 
 
 MainWindow::~MainWindow()
