@@ -92,11 +92,11 @@ void MainWindow::Start()
 
         for(int i=N-1;i>=0;i--)
         {
-            if(SmileFlag == true &&  (SmileArray[i]%2) == 1)
+            if(SmileFlag == true &&  abs(SmileArray[i]%2) == 1)
             {
                 SmileArray[i] = SmileArray[i]*SmileNumber;
             }
-            else if((SmileArray[i]%2) == 1 && SmileFlag == false)
+            else if(abs(SmileArray[i]%2) == 1 && SmileFlag == false)
             {
                 SmileNumber = SmileArray[i];
                 SmileArray[i] = SmileArray[i]*SmileNumber;
